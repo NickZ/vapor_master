@@ -38,7 +38,7 @@ exports.getParam = async (req, res) => {
   debug(keyPath)
 
   const values = await Promise.all([
-    //coreUtil.logTouch(callerPath, null, req.ip),
+    coreUtil.logTouch(callerPath, null, req.ip),
     paramUtil.get(keyPath),
   ])
 
@@ -167,7 +167,7 @@ exports.getParamNames = async (req, res) => {
   const [callerPath] = req.body.params
 
   const [, keys] = await Promise.all([
-    //coreUtil.logTouch(callerPath, null, req.ip),
+    coreUtil.logTouch(callerPath, null, req.ip),
     paramUtil.getAllKeys(),
   ])
 
